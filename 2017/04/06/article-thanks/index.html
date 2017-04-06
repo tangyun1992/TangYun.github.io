@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="加油加油">
+<meta name="description" content="特征提取时-空滤波器从位于大脑皮层各导联上采集的脑电数据之间的相关性很强，在做特征提取前，先要对其进行相应的预处理。与运动想象相关的大脑皮层区域在躯体感觉区和躯体运动区，集中在大脑皮层中央区域。在采集大脑皮层中央区的多导联脑电的情况下，可以先使用空间滤波方法来对C3,Cz,C4三导的数据预处理  局部平均法： 通用去均值法： 拉普拉斯去均值法：频带能量频带能量特征是指通过求取位于大脑皮层不同区域的">
 <meta name="keywords">
 <meta property="og:type" content="article">
-<meta property="og:title" content="article thanks">
+<meta property="og:title" content="基于运动想象的脑电信号特征提取">
 <meta property="og:url" content="https://tangyun1992.github.io/TangYun.github.io/2017/04/06/article-thanks/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="加油加油">
-<meta property="og:updated_time" content="2017-04-06T11:59:49.175Z">
+<meta property="og:description" content="特征提取时-空滤波器从位于大脑皮层各导联上采集的脑电数据之间的相关性很强，在做特征提取前，先要对其进行相应的预处理。与运动想象相关的大脑皮层区域在躯体感觉区和躯体运动区，集中在大脑皮层中央区域。在采集大脑皮层中央区的多导联脑电的情况下，可以先使用空间滤波方法来对C3,Cz,C4三导的数据预处理  局部平均法： 通用去均值法： 拉普拉斯去均值法：频带能量频带能量特征是指通过求取位于大脑皮层不同区域的">
+<meta property="og:updated_time" content="2017-04-06T13:27:26.065Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="article thanks">
-<meta name="twitter:description" content="加油加油">
+<meta name="twitter:title" content="基于运动想象的脑电信号特征提取">
+<meta name="twitter:description" content="特征提取时-空滤波器从位于大脑皮层各导联上采集的脑电数据之间的相关性很强，在做特征提取前，先要对其进行相应的预处理。与运动想象相关的大脑皮层区域在躯体感觉区和躯体运动区，集中在大脑皮层中央区域。在采集大脑皮层中央区的多导联脑电的情况下，可以先使用空间滤波方法来对C3,Cz,C4三导的数据预处理  局部平均法： 通用去均值法： 拉普拉斯去均值法：频带能量频带能量特征是指通过求取位于大脑皮层不同区域的">
 
 
 
@@ -131,7 +131,7 @@
 
 
 
-  <title> article thanks | Hexo </title>
+  <title> 基于运动想象的脑电信号特征提取 | Hexo </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -271,7 +271,7 @@
             
             
               
-                article thanks
+                基于运动想象的脑电信号特征提取
               
             
           </h1>
@@ -322,7 +322,13 @@
       
 
       
-        <h2 id="加油加油"><a href="#加油加油" class="headerlink" title="加油加油"></a>加油加油</h2>
+        <h1 id="特征提取"><a href="#特征提取" class="headerlink" title="特征提取"></a>特征提取</h1><h2 id="时-空滤波器"><a href="#时-空滤波器" class="headerlink" title="时-空滤波器"></a>时-空滤波器</h2><p>从位于大脑皮层各导联上采集的脑电数据之间的相关性很强，在做特征提取前，先要对其进行相应的预处理。与运动想象相关的大脑皮层区域在躯体感觉区和躯体运动区，集中在大脑皮层中央区域。在采集大脑皮层中央区的多导联脑电的情况下，可以先使用空间滤波方法来对C3,Cz,C4三导的数据预处理</p>
+<ol>
+<li>局部平均法：</li>
+<li>通用去均值法：</li>
+<li>拉普拉斯去均值法：<h2 id="频带能量"><a href="#频带能量" class="headerlink" title="频带能量"></a>频带能量</h2>频带能量特征是指通过求取位于大脑皮层不同区域的不同频段的时段脑电能量作为最终的模式特征，本方法在运动想象脑电信号的处理中是最简卑且有效的特征提取方法。与运动想象相关的脑电信号在之间<h2 id="CSP"><a href="#CSP" class="headerlink" title="CSP"></a>CSP</h2>对两类脑电信号构建一个共空间滤波器来寻取最优映射方向，使得一类脑电在该方向上的投影能量最大，而另一类脑电在该方向上的能量最小。空间滤波器(CSP)的求取是通过对两类脑电协方差的和进行特征值分解来构造白化矩阵，使用白化矩阵对两类协方差进行白化处理再做特征分解，取最大和次大特征值对应的两个特征向量构造空间滤波器。脑电的特征提取是将脑电协方差经空间滤波器映射后得到一个矩阵，然后对此矩阵的协方差取对角元，对角元进归一化后的值即为脑电特征。</li>
+</ol>
+
       
     </div>
 
@@ -477,7 +483,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#加油加油"><span class="nav-number">1.</span> <span class="nav-text">加油加油</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#特征提取"><span class="nav-number">1.</span> <span class="nav-text">特征提取</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#时-空滤波器"><span class="nav-number">1.1.</span> <span class="nav-text">时-空滤波器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#频带能量"><span class="nav-number">1.2.</span> <span class="nav-text">频带能量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSP"><span class="nav-number">1.3.</span> <span class="nav-text">CSP</span></a></li></ol></li></ol></div>
             
 
           </div>
