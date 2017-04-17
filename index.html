@@ -247,7 +247,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://tangyun1992.github.io/TangYun.github.io/TangYun.github.io/2017/04/11/promise/">
+    <link itemprop="mainEntityOfPage" href="https://tangyun1992.github.io/TangYun.github.io/TangYun.github.io/2016/08/12/7cross-domain/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tang Yun">
@@ -269,8 +269,8 @@
             
               
                 
-                <a class="post-title-link" href="/TangYun.github.io/2017/04/11/promise/" itemprop="url">
-                  promise
+                <a class="post-title-link" href="/TangYun.github.io/2016/08/12/7cross-domain/" itemprop="url">
+                  跨域
                 </a>
               
             
@@ -286,8 +286,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-11T22:46:11+08:00">
-                2017-04-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-12T21:20:38+08:00">
+                2016-08-12
               </time>
             
 
@@ -324,7 +324,13 @@
       
         
           
-            <p>转载：<a href="https://segmentfault.com/a/1190000000684654" target="_blank" rel="external">https://segmentfault.com/a/1190000000684654</a></p>
+            <h1 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h1><p>为了页面和服务器的安全，脚本是不能访问非本域的动态网络资源，但可以访问如脚本、样式、图片、视频、音频等这些静态资源。<br>发生跨域：网络协议不同、端口不同、域名不同、子域名不同。</p>
+<p><code>// 本域：qianduanblog.com</code><br><code>// 他域：www.baidu.com</code><br><code>$.ajax(&quot;http://www.baidu.com&quot;);</code><br><code>// 报错：XMLHttpRequest cannot load http://www.baidu.com/. Origin http://qianduanblog.com is not allowed by Access-Control-Allow-Origin.</code></p>
+<h2 id="使用JSONP跨域"><a href="#使用JSONP跨域" class="headerlink" title="使用JSONP跨域"></a>使用JSONP跨域</h2><p>JSONP 的理念就是，我和服务端约定好一个函数名，当我请求文件的时候，服务端返回一段 JavaScript。这段 JavaScript 调用了我们约定好的函数，并且将数据当做参数传入。JSON 的数据格式和 JavaScript 语言里对象的格式正好相同。所以在我们约定的函数里面可以直接使用这个对象。<br><code>&lt;script src=&quot;http://www.google.com/getUsers.php?flag=do&amp;time=1&quot;&gt;&lt;/script&gt;</code><br>只支持GET请求而不支持POST等其它类型的HTTP请求</p>
+<h2 id="代理"><a href="#代理" class="headerlink" title="代理"></a>代理</h2><p><img src="./images/Cross-domain-proxy.png" alt=""></p>
+<h2 id="XHL2"><a href="#XHL2" class="headerlink" title="XHL2"></a>XHL2</h2><p>HTML5中的XMLHttpRequest Level 2中的API,postMessage 方法和 onmessage 事件来实现不同域之间的通信，其中postMessage用于实时向接收信息的页面发送消息。</p>
+<h2 id="CORS"><a href="#CORS" class="headerlink" title="CORS"></a>CORS</h2><p>基本思想就是使用自定义的HTTP头部让浏览器与服务器进行沟通，从而决定请求或响应是应该成功还是失败。目前，所有浏览器都支持该功能，IE浏览器不能低于IE10。<br>览器一旦发现AJAX请求跨源，就会自动添加一些附加的头信息，有时还会多出一次附加的请求，但用户不会有感觉。因此，实现CORS通信的关键是服务器。只要服务器实现了CORS接口，就可以跨源通信。<br><code>&lt;script type=&quot;text/javascript&quot;&gt;</code><br>    <code>var xhr = new XMLHttpRequest();</code><br>   <code>xhr.open(&quot;POST&quot;, &quot;/damonare&quot;,true);</code><br>   <code>xhr.send();</code><br><code>&lt;/script&gt;</code></p>
+<p><code>&lt;script type=&quot;text/javascript&quot;&gt;</code><br>    var xhr = new XMLHttpRequest();<code>`xhr.open(&quot;￼GET&quot;, &quot;http://segmentfault.com/u/trigkit4/&quot;,true);</code><br>   <code>xhr.send();</code><br><code>&lt;/script&gt;</code><br>主要就是通过设置Access-Control-Allow-Origin来进行的。如果浏览器检测到相应的设置，就可以允许Ajax进行跨域的访问。<br>CORS和JSONP对比<br>JSONP只能实现GET请求，而CORS支持所有类型的HTTP请求。<br>使用CORS，开发者可以使用普通的XMLHttpRequest发起请求和获得数据，比起JSONP有更好的错误处理。<br>JSONP主要被老的浏览器支持，它们往往不支持CORS，而绝大多数现代浏览器都已经支持了CORS）。<br>CORS与JSONP相比，无疑更为先进、方便和可靠。</p>
 
           
         
@@ -368,7 +374,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://tangyun1992.github.io/TangYun.github.io/TangYun.github.io/2017/04/11/cookie/">
+    <link itemprop="mainEntityOfPage" href="https://tangyun1992.github.io/TangYun.github.io/TangYun.github.io/2016/07/11/6cookie/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tang Yun">
@@ -390,7 +396,7 @@
             
               
                 
-                <a class="post-title-link" href="/TangYun.github.io/2017/04/11/cookie/" itemprop="url">
+                <a class="post-title-link" href="/TangYun.github.io/2016/07/11/6cookie/" itemprop="url">
                   cookie
                 </a>
               
@@ -407,8 +413,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-11T22:33:50+08:00">
-                2017-04-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-07-11T22:33:50+08:00">
+                2016-07-11
               </time>
             
 
@@ -495,7 +501,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://tangyun1992.github.io/TangYun.github.io/TangYun.github.io/2017/04/11/reference-type/">
+    <link itemprop="mainEntityOfPage" href="https://tangyun1992.github.io/TangYun.github.io/TangYun.github.io/2016/06/07/5promise/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tang Yun">
@@ -517,8 +523,8 @@
             
               
                 
-                <a class="post-title-link" href="/TangYun.github.io/2017/04/11/reference-type/" itemprop="url">
-                  reference type
+                <a class="post-title-link" href="/TangYun.github.io/2016/06/07/5promise/" itemprop="url">
+                  promise
                 </a>
               
             
@@ -534,8 +540,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-11T10:09:47+08:00">
-                2017-04-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-06-07T22:46:11+08:00">
+                2016-06-07
               </time>
             
 
@@ -572,978 +578,7 @@
       
         
           
-            <h2 id="基本类型与应用类型"><a href="#基本类型与应用类型" class="headerlink" title="基本类型与应用类型"></a>基本类型与应用类型</h2><p>1、动态属性。</p>
-<p>JS中对象的属性可以动态的添加并且赋值的，比如：</p>
-<p>var obj = new Object();</p>
-<p>obj.name = ‘zjzhome’;</p>
-<p>console.log(obj.name) //zjzhome<br>但是基本类型不可以添加属性，虽然这样做不报错。</p>
-<p>2、复制值</p>
-<p>引用类型复制和简单类型不同，复制完成后新值和之前的值都是引用的同一个对象，所以之前的值改变，也会影响复制后的值，看个例子：</p>
-<p>var obj1 = new Object()</p>
-<p>obj1.name = ‘zjzhome’</p>
-<p>var obj2 = obj1</p>
-<p>console.log(obj2.name); //zjzhome</p>
-<p>obj1.name = ‘zjz’</p>
-<p>console.log(obj2.name) //zjz</p>
-<p>3、函数传参</p>
-<p>JS中所有函数传参都是按值传递的。</p>
-<p>function setName(obj) {<br>    obj.name = ‘zjzhome’<br>}</p>
-<p>var person = new Object()</p>
-<p>setName(person)</p>
-<p>console.log(person.name) //zjzhome<br>看了上面的例子可能会觉得对象是按引用传递的，我们把例子修改一下：</p>
-<p>function setName(obj) {<br>    obj.name = ‘zjzhome’;<br>    obj = new Object();<br>    obj.name = ‘zjz’<br>}</p>
-<p>var person = new Object()</p>
-<p>setName(person)</p>
-<p>console.log(person.name) // zjzhome<br>person的值并没有因为obj的修改而改变，说明不是按引用传递的。如果是按引用传递的，obj和person指向同一个对象，当obj改变，person也会改变。</p>
-<p>4、类型检测</p>
-<p>typeof用于检测简单类型，对于对象，我们更想知道的是什么类型的对象。所以引进了instanceof操作符。</p>
-<p>person instanceof Object 这样来检测person是不是Object。</p>
-<p>person instanceof Array 这样来检测person是不是Array。<br>定义了一个对象其实是在栈内存中存储了一个指针，这个指针指向堆内存中该对象的存储地址。复制给另一个对象的过程其实是把该对象的地址复制给了另一个对象变量，两个指针都指向同一个对象，所以若其中一个修改了，则另一个也会改变。</p>
-<h2 id="RegExp类型"><a href="#RegExp类型" class="headerlink" title="RegExp类型"></a>RegExp类型</h2><p>正则表达式表示方法<br>模式 + 3 个标志的组合体。<br>即：var expression = /pattern/flags;<br>flag:g,i,m三个标志之一（全局模式，不缺分大小写模式，多行模式）</p>
-<p>定义方式<br>1.字面量定义：var pattern1 = /[bc]at/i;<br>2.构造函数定义：var pattern1 = new RegExp(“[bc]at”,”i”);<br>attention：构造函数创造正则对象的时候，需要常规的字符转移规则（在前面加反斜杠\）<br>RegExp方法</p>
-<p>exec()方法<br>接收值：一个参数，就是应用模式的字符串<br>返回值：包含第一个匹配项信息的数组 (1.index匹配项在字符串中的位置2.input应用正则表达式的字符串)，或者在没有匹配项的情况下返回null<br>–此数组的第 0 个元素是与正则表达式相匹配的文本，<br>第 1 个元素是与 RegExpObject 的第 1 个子表达式相匹配的文本（如果有的话）<br>第 2 个元素是与 RegExpObject 的第 2 个子表达式相匹配的文本（如果有的话）<br>以此类推。<br>举例：<br>var text = “mom and dad and baby”;<br>var pattern = /mom( and dad ( and baby)?)?/gi;</p>
-<p>var match = pattern.exec(text);<br>alert(match.index);//0<br>alert(match.input);//“mom and dad and baby”<br>alert(match[0]);//“mom and dad and baby”<br>alert(match[1]);//“and dad and baby”<br>alert(match[2]);//“and baby”</p>
-<p>exec()属性就算是设置了g标志，每次也就返回一个匹配项。<br>在不设置g标志的情况下，同个字符串上调用exec()始终返回第一个匹配项的信息。</p>
-<p>var text = “cat pat fat”;<br>var pattern = /.at/;<br>var match = pattern.exec(text);<br>alert(match.index);//0<br>alert(match.input);//cat pat fat<br>alert(match[0]);//cat<br>alert(pattern.lastIndex);//0</p>
-<p>var match = pattern.exec(text);<br>alert(match.index);//0<br>alert(match.input);//cat pat fat<br>alert(match[0]);//cat<br>alert(pattern.lastIndex);//0</p>
-<p>设置全局标志g情况下，每次调用exec()会返回一个新的匹配项的信息。</p>
-<p>var text = “cat pat fat”;<br>var pattern = /.at/g;<br>var match = pattern.exec(text);<br>alert(match.index);//0<br>alert(match.input);//cat pat fat<br>alert(match[0]);//cat<br>alert(pattern.lastIndex);//3</p>
-<p>var match = pattern.exec(text);<br>alert(match.index);//4<br>alert(match.input);//cat pat fat<br>alert(match[0]);//pat<br>alert(pattern.lastIndex);//7</p>
-<p>test()方法<br>接收值：搜索字符串指定的值，<br>返回值：根据结果并返回真或假。</p>
-<p>var str = ‘runoob’;<br>var patt1 = new RegExp(‘\w’, ‘g’); // 有转义作为正则表达式处理<br>var patt2 = new RegExp(‘\w’, ‘g’);  // 无转义作为字符串处理<br>var patt3 =/\w+/g;  // 与 patt1 效果相同</p>
-<p>document.write(patt1.test(str)) //输出 true<br>document.write(“<br>“)</p>
-<p>document.write(patt2.test(str)) //输出 false<br>document.write(“<br>“)</p>
-<p>document.write(patt3.test(str)) //输出 true<br>需要转义的字符：()[]{}\^$?+<em>.<br>^[A-Za-zd]+([-_.][A-Za-zd]+)</em>@([A-Za-zd]+[-.])+[A-Za-zd]{2,5}$</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://tangyun1992.github.io/TangYun.github.io/TangYun.github.io/2017/04/11/data-type/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tang Yun">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/TangYun.github.io/uploads/111.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/TangYun.github.io/2017/04/11/data-type/" itemprop="url">
-                  data type
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-11T09:43:53+08:00">
-                2017-04-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="1-转换函数："><a href="#1-转换函数：" class="headerlink" title="1. 转换函数："></a>1. 转换函数：</h2><p>js提供了parseInt()和parseFloat()两个转换函数。前者把值转换成整数，后者把值转换成浮点数。只有对String类型调用这些方法，这两个函数才能正确运行；对其他类型返回的都是NaN(Not a Number)。</p>
-<p>在判断字符串是否是数字值前，parseInt()和parseFloat()都会仔细分析该字符串。parseInt()方法首先查看位置0处的 字符，判断它是否是个有效数字；如果不是，该方法将返回NaN，不再继续执行其他操作。但如果该字符是有效数字，该方法将查看位置1处的字符，进行同样的 测试。这一过程将持续到发现非有效数字的字符为止，此时parseInt()将把该字符之前的字符串转换成数字。</p>
-<p>例如，如果要把字符串 “1234blue “转换成整数，那么parseInt()将返回1234，因为当它检测到字符b时，就会停止检测过程。字符串中包含的数字字面量会被正确转换为数字，因此 字符串 “0xA “会被正确转换为数字10。不过，字符串 “22.5 “将被转换成22，因为对于整数来说，小数点是无效字符。一些示例如下：</p>
-<p>parseInt(“1234blue”);   //returns   1234<br>parseInt(“0xA”);   //returns   10<br>parseInt(“22.5”);   //returns   22<br>parseInt(“blue”);   //returns   NaN</p>
-<p>parseInt()方法还有基模式，可以把二进制、八进制、十六进制或其他任何进制的字符串转换成整数。基是由parseInt()方法的第二个参数指定的，所以要解析十六进制的值，需如下调用parseInt()方法：<br>parseInt(“AF”,   16);   //returns   175<br>当然，对二进制、八进制，甚至十进制（默认模式），都可以这样调用parseInt()方法：<br>parseInt(“10”,   2);   //returns   2<br>parseInt(“10”,   8);   //returns   8<br>parseInt(“10”,   10);   //returns   10<br>如果十进制数包含前导0，那么最好采用基数10，这样才不会意外地得到八进制的值。例如：<br>parseInt(“010”);   //returns   8<br>parseInt(“010”,   8);   //returns   8<br>parseInt(“010”,   10);   //returns   10<br>在这段代码中，两行代码都把字符串 “010 “解析成了一个数字。第一行代码把这个字符串看作八进制的值，解析它的方式与第二行代码（声明基数为8）相同。最后一行代码声明基数为10，所以iNum3最后等于10。</p>
-<p>parseFloat()方法与parseInt()方法的处理方式相似，从位置0开始查看每个字符，直到找到第一个非有效的字符为止，然后把该字 符之前的字符串转换成数字。不过，对于这个方法来说，第一个出现的小数点是有效字符。如果有两个小数点，第二个小数点将被看作无效的， parseFloat()方法会把这个小数点之前的字符串转换成数字。这意味着字符串 “22.34.5 “将被解析成22.34。<br>使用parseFloat()方法的另一不同之处在于，字符串必须以十进制形式表示浮点数，而不能用八进制形式或十六进制形式。该<br>方法会忽略前导0，所以八进制数0908将被解析为908。对于十六进制数0xA，该方法将返回NaN，因为在浮点数中，x不是有效字符。此外，parseFloat()也没有基模式。</p>
-<p>下面是使用parseFloat()方法的示例：<br>parseFloat(“1234blue”);   //returns   1234.0<br>parseFloat(“0xA”);   //returns   NaN<br>parseFloat(“22.5”);   //returns   22.5<br>parseFloat(“22.34.5”);   //returns   22.34<br>parseFloat(“0908”);   //returns   908<br>parseFloat(“blue”);   //returns   NaN</p>
-<h2 id="2-强制类型转换"><a href="#2-强制类型转换" class="headerlink" title="2. 强制类型转换"></a>2. 强制类型转换</h2><p>还可使用强制类型转换（type casting）处理转换值的类型。使用强制类型转换可以访问特定的值，即使它是另一种类型的。<br>ECMAScript中可用的3种强制类型转换如下：<br>Boolean(value)——把给定的值转换成Boolean型；<br>Number(value)——把给定的值转换成数字（可以是整数或浮点数）；<br>String(value)——把给定的值转换成字符串。<br>用这三个函数之一转换值，将创建一个新值，存放由原始值直接转换成的值。这会造成意想不到的后果。<br>当要转换的值是至少有一个字符的字符串、非0数字或对象（下一节将讨论这一点）时，Boolean()函数将返回true。如果该值是空字符串、数字0、undefined或null，它将返回false。</p>
-<p>可以用下面的代码段测试Boolean型的强制类型转换。</p>
-<p>Boolean(“”);   //false   –   empty   string<br>Boolean(“hi”);   //true   –   non-empty   string<br>Boolean(100);   //true   –   non-zero   number<br>Boolean(null);   //false   -   null<br>Boolean(0);   //false   -   zero<br>Boolean(new   Object());   //true   –   object</p>
-<p>Number()的强制类型转换与parseInt()和parseFloat()方法的处理方式相似，只是它转换的是整个值，而不是部分值。还记 得吗，parseInt()和parseFloat()方法只转换第一个无效字符之前的字符串，因此 “4.5.6 “将被转换为 “4.5 “。用Number()进行强制类型转换， “4.5.6 “将返回NaN，因为整个字符串值不能转换成数字。如果字符串值能被完整地转换，Number()将判断是调用parseInt()方法还是调用 parseFloat()方法。下表说明了对不同的值调用Number()方法会发生的情况：</p>
-<p>用法结果<br>Number(false)   0<br>Number(true)   1<br>Number(undefined)   NaN<br>Number(null)   0<br>Number( “5.5 “)   5.5<br>Number( “56 “)   56<br>Number( “5.6.7 “)   NaN<br>Number(new   Object())   NaN<br>Number(100)   100  </p>
-<p>最后一种强制类型转换方法String()是最简单的，因为它可把任何值转换成字符串。要执行这种强制类型转换，只需要调用作为参数传递进来的值的 toString()方法，即把1转换成   “1 “，把true转换成 “true “，把false转换成 “false “，依此类推。强制转换成字符串和调用toString()方法的唯一不同之处在于，对null或undefined值强制类型转换可以生成字符串而不引 发错误：</p>
-<p>var   s1   =   String(null);   //“null”<br>var   oNull   =   null;<br>var   s2   =   oNull.toString();   //won’t   work,   causes   an   error</p>
-<h2 id="3-利用js变量弱类型转换"><a href="#3-利用js变量弱类型转换" class="headerlink" title="3. 利用js变量弱类型转换"></a>3. 利用js变量弱类型转换</h2><p>举个小例子，一看，就会明白了。</p>
-<p><script><br>var   str= ‘012.345 ‘;<br>var   x   =   str-0;<br>x   =   x*1;<br></script></p>
-<h2 id="4-操作数隐式类型转换"><a href="#4-操作数隐式类型转换" class="headerlink" title="4.操作数隐式类型转换"></a>4.操作数隐式类型转换</h2><p>一、减号、乘号、除号、取模…<br>减号、乘号、除号、取模等操作符是比较单纯的操作符。<br>这些操作符会尝试将他们的操作数转换为数字（使用Number()），如果操作数没法转换为数字的话，他们的结果就是NaN。</p>
-<p>NaN与任何数进行这些操作，结果都是NaN<br>    // Demo1.html<br>    var obj = {<br>        valueOf: function() {<br>            return 18;<br>        }<br>    };<br>    var obj2 = {<br>        valueOf: function() {<br>            return 19;<br>        }<br>    };</p>
-<pre><code>console.log(
-        1 - &quot;2&quot;, // -1
-        &quot;32&quot; - &quot;22&quot;, // 10
-        obj % 4, // 2
-        obj * obj2, // 342
-        &quot;99b&quot; * 10 // NaN
-);
-</code></pre><p>二、大于、小于、大于等于、小于等于<br>同（一），但是对于两个操作数均是字符串的时候&amp;无法转换时的返回值会有不同。<br>当两个操作数均是字符串的时候，它会执行大家熟悉的字符串比较，即从左到右依次比较每一个字符的ASCII码，若出现符合操作符的情况，则返回true，否则返回false。<br>无法将操作数转换为数字的情况下总是返回false。</p>
-<p>Boolean(NaN) == false<br>// Demo2.html<br>    var obj = {<br>        valueOf: function() {<br>            return 18;<br>        }<br>    };</p>
-<pre><code>console.log(
-        1 &lt;= &quot;2&quot;, // true
-        &quot;1&quot; &lt;= &quot;a&quot;, // true
-        obj &gt;= &quot;17&quot; // true
-);
-</code></pre><p>三、==、!=<br>这两个运算符在大部分上面都是与（一）相同的，不同的是：</p>
-<p>字符串 op 字符串：不会进行类型转换，直接比较。<br>对象 op 对象：引用都指向同一个对象才为true。<br>    // Demo3.html<br>    var obj = {<br>        valueOf: function() {<br>            return 18;<br>        }<br>    };<br>    var obj2 = {<br>        valueOf: function() {<br>            return 19;<br>        }<br>    };</p>
-<pre><code>console.log(
-        obj == obj2, // false
-        &quot;XD&quot; == &quot;XD&quot;, // true
-        obj == 18, // true
-        obj2 == &quot;19&quot; // true
-);
-</code></pre><p>温馨提示：null == undefined // true<br>四、加号（+）<br>当没有特别指定的时候参考（一），但有如下几种例外情况:</p>
-<p>字符串 + 字符串：进行字符串拼接操作。<br>字符串 + 其他：将其他转换为字符串，并进行拼接操作。<br>    // Demo4.html<br>        var obj = {<br>        toString: function() {<br>            return “18s”;<br>        },<br>        valueOf: undefined<br>    };<br>    var obj2 = {<br>        toString: function() {<br>            return “19b”;<br>        },<br>        valueOf: function() {<br>            return 19;<br>        }<br>    };</p>
-<pre><code>console.log(
-        obj + obj2, // &quot;18s19&quot;
-        obj2 + obj2 // 38
-);
-</code></pre><p>注意上面obj + obj2的结果不是”18s19b”<br>console.log(1+”2”+”2”)  // “1” + “2” + “2” ==&gt; “122”<br>console.log(1+ +”2” + “2”) // +”2” === 2; 1 + 2 + “2” ==&gt; 3 + “2” ==&gt; “3” + “2” ==&gt; “32”<br>console.log(“A” - “B” + “2”)  // “A” - “B”为NaN ==&gt; “NaN” + “2” ==&gt; “NaN2”<br>console.log(“A” - “B” + “2”)  // “A” - “B”为NaN, NaN加任何number都还是NaN</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://tangyun1992.github.io/TangYun.github.io/TangYun.github.io/2017/04/10/oop/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tang Yun">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/TangYun.github.io/uploads/111.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/TangYun.github.io/2017/04/10/oop/" itemprop="url">
-                  oop
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-10T21:47:22+08:00">
-                2017-04-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="一-对象与函数的关系"><a href="#一-对象与函数的关系" class="headerlink" title="一.对象与函数的关系"></a>一.对象与函数的关系</h1><p>在Javascript中,每一个函数实际上都是一个函数对象。可以new一个函数来返回一个对象，所有typeof返回“function”的对象都是函数对象。也称这样的对象为构造器（constructor），因而，所有的构造器都是对象，但不是所有的对象都是构造器。Function是所有函数对象的基础，而Object则是所有对象（包括函数对象）的基础。</p>
-<h1 id="二-创建对象"><a href="#二-创建对象" class="headerlink" title="二.创建对象"></a>二.创建对象</h1><h2 id="工厂模式-无从识别对象的类型"><a href="#工厂模式-无从识别对象的类型" class="headerlink" title="工厂模式(无从识别对象的类型)"></a>工厂模式(无从识别对象的类型)</h2><p>function createBlog(name, url) {<br>  var o = new Object();<br>  o.name = name;<br>  o.url = url;<br>  o.sayUrl= function() {<br>    alert(this.url);<br>  }<br>  return o;<br>}</p>
-<p>var blog1 = createBlog(‘wuyuchang’, ‘<a href="http://www.jb51.net/" target="_blank" rel="external">http://www.jb51.net/</a>‘);</p>
-<h2 id="构造函数模式-浪费内存的问题"><a href="#构造函数模式-浪费内存的问题" class="headerlink" title="构造函数模式(浪费内存的问题)"></a>构造函数模式(浪费内存的问题)</h2><p>一个普通的函数，内部使用this，对构造函数使用new运算符，this变量会绑定在实例对象上。</p>
-<p><code>function Cat(name,color){</code><br><code>this.name=name;</code><br><code>this.color=color;</code><br><code>}</code><br><code>var cat1=new Cat(&#39;dog&#39;,&#39;black&#39;);</code><br>cat1和cat2会自动含有一个constructor属性，指向它们的构造函数。</p>
-<p>##原型模式<br>每一个构造函数都有一个prototype属性，指向另一个对象。这个对象的所有属性和方法，都会被构造函数的实例继承。</p>
-<p><code>function Cat(){}</code><br><code>Cat.prototype.eat=function(){</code><br><code>alert(&#39;eat&#39;);</code><br><code>}</code></p>
-<h2 id="Prototype模式的验证方法"><a href="#Prototype模式的验证方法" class="headerlink" title="Prototype模式的验证方法"></a>Prototype模式的验证方法</h2><p>为了配合prototype属性，Javascript定义了一些辅助方法，帮助我们使用它。，</p>
-<p>###isPrototypeOf()<br>这个方法用来判断，某个proptotype对象和某个实例之间的关系。<br>　　alert(Cat.prototype.isPrototypeOf(cat1)); //true<br>　　alert(Cat.prototype.isPrototypeOf(cat2)); //true</p>
-<p>###hasOwnProperty()<br>每个实例对象都有一个hasOwnProperty()方法，用来判断某一个属性到底是本地属性，还是继承自prototype对象的属性。<br>　　alert(cat1.hasOwnProperty(“name”)); // true<br>　　alert(cat1.hasOwnProperty(“type”)); // false</p>
-<p>###in运算符<br>in运算符可以用来判断，某个实例是否含有某个属性，不管是不是本地属性。<br>　　alert(“name” in cat1); // true<br>　　alert(“type” in cat1); // true<br>in运算符还可以用来遍历某个对象的所有属性。<br>　　for(var prop in cat1) { alert(“cat1[“+prop+”]=”+cat1[prop]); }</p>
-<h2 id="混合模式（原型模式-构造函数模式）"><a href="#混合模式（原型模式-构造函数模式）" class="headerlink" title="混合模式（原型模式 + 构造函数模式）"></a>混合模式（原型模式 + 构造函数模式）</h2><p>function createBlog(name, url) {<br>  var o = new Object();<br>  o.name = name;<br>  o.url = url;<br>  o.sayUrl= function() {<br>    alert(this.url);<br>  }<br>  return o;<br>}</p>
-<p>var blog1 = createBlog(‘wuyuchang’, ‘<a href="http://www.jb51.net/" target="_blank" rel="external">http://www.jb51.net/</a>‘);</p>
-<p>###new操作符</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://tangyun1992.github.io/TangYun.github.io/TangYun.github.io/2017/04/10/js-closure/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tang Yun">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/TangYun.github.io/uploads/111.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/TangYun.github.io/2017/04/10/js-closure/" itemprop="url">
-                  闭包
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-10T21:36:44+08:00">
-                2017-04-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://tangyun1992.github.io/TangYun.github.io/TangYun.github.io/2017/04/06/jdk-tomcat/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tang Yun">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/TangYun.github.io/uploads/111.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/TangYun.github.io/2017/04/06/jdk-tomcat/" itemprop="url">
-                  jdk+tomcat的配置
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-06T22:00:56+08:00">
-                2017-04-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://tangyun1992.github.io/TangYun.github.io/TangYun.github.io/2017/04/06/article-thanks/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tang Yun">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/TangYun.github.io/uploads/111.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/TangYun.github.io/2017/04/06/article-thanks/" itemprop="url">
-                  基于运动想象的脑电信号特征提取
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-06T19:54:09+08:00">
-                2017-04-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="特征提取"><a href="#特征提取" class="headerlink" title="特征提取"></a>特征提取</h1><h2 id="时-空滤波器"><a href="#时-空滤波器" class="headerlink" title="时-空滤波器"></a>时-空滤波器</h2><p>从位于大脑皮层各导联上采集的脑电数据之间的相关性很强，在做特征提取前，先要对其进行相应的预处理。与运动想象相关的大脑皮层区域在躯体感觉区和躯体运动区，集中在大脑皮层中央区域。在采集大脑皮层中央区的多导联脑电的情况下，可以先使用空间滤波方法来对C3,Cz,C4三导的数据预处理</p>
-<ol>
-<li>局部平均法：</li>
-<li>通用去均值法：</li>
-<li>拉普拉斯去均值法：<h2 id="频带能量"><a href="#频带能量" class="headerlink" title="频带能量"></a>频带能量</h2>频带能量特征是指通过求取位于大脑皮层不同区域的不同频段的时段脑电能量作为最终的模式特征，本方法在运动想象脑电信号的处理中是最简卑且有效的特征提取方法。与运动想象相关的脑电信号在之间<h2 id="CSP"><a href="#CSP" class="headerlink" title="CSP"></a>CSP</h2>对两类脑电信号构建一个共空间滤波器来寻取最优映射方向，使得一类脑电在该方向上的投影能量最大，而另一类脑电在该方向上的能量最小。空间滤波器(CSP)的求取是通过对两类脑电协方差的和进行特征值分解来构造白化矩阵，使用白化矩阵对两类协方差进行白化处理再做特征分解，取最大和次大特征值对应的两个特征向量构造空间滤波器。脑电的特征提取是将脑电协方差经空间滤波器映射后得到一个矩阵，然后对此矩阵的协方差取对角元，对角元进归一化后的值即为脑电特征。</li>
-</ol>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://tangyun1992.github.io/TangYun.github.io/TangYun.github.io/2017/04/06/article-title/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tang Yun">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/TangYun.github.io/uploads/111.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/TangYun.github.io/2017/04/06/article-title/" itemprop="url">
-                  未命名
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-06T09:59:17+08:00">
-                2017-04-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="欢迎使用-唐云的博客"><a href="#欢迎使用-唐云的博客" class="headerlink" title="欢迎使用 唐云的博客"></a>欢迎使用 唐云的博客</h2><p><strong>MarkdownPad</strong> 是 Windows 平台上一个功能完善的 Markdown 编辑器。</p>
-<h3 id="专为-Markdown-打造"><a href="#专为-Markdown-打造" class="headerlink" title="专为 Markdown 打造"></a>专为 Markdown 打造</h3><p>提供了语法高亮和方便的快捷键功能，给您最好的 Markdown 编写体验。</p>
-<p>来试一下：</p>
-<ul>
-<li><strong>粗体</strong> (<code>Ctrl+B</code>) and <em>斜体</em> (<code>Ctrl+I</code>)</li>
-<li>引用 (<code>Ctrl+Q</code>)</li>
-<li>代码块 (<code>Ctrl+K</code>)</li>
-<li>标题 1, 2, 3 (<code>Ctrl+1</code>, <code>Ctrl+2</code>, <code>Ctrl+3</code>)</li>
-<li>列表 (<code>Ctrl+U</code> and <code>Ctrl+Shift+O</code>)唐云，</li>
-</ul>
-<h3 id="实时预览，所见即所得"><a href="#实时预览，所见即所得" class="headerlink" title="实时预览，所见即所得"></a>实时预览，所见即所得</h3><p>无需猜测您的 <a href="http://markdownpad.com" target="_blank" rel="external">语法</a> 是否正确；每当您敲击键盘，实时预览功能都会立刻准确呈现出文档的显示效果。</p>
-<h3 id="自由定制"><a href="#自由定制" class="headerlink" title="自由定制"></a>自由定制</h3><p>100% 可自定义的字体、配色、布局和样式，让您可以将 MarkdownPad 配置的得心应手。</p>
-<h3 id="为高级用户而设计的稳定的-Markdown-编辑器"><a href="#为高级用户而设计的稳定的-Markdown-编辑器" class="headerlink" title="为高级用户而设计的稳定的 Markdown 编辑器"></a>为高级用户而设计的稳定的 Markdown 编辑器</h3><p> MarkdownPad 支持多种 Markdown 解析引擎，包括 标准 Markdown 、 Markdown 扩展 (包括表格支持) 以及 GitHub 风格 Markdown 。</p>
-<p> 有了标签式多文档界面、PDF 导出、内置的图片上传工具、会话管理、拼写检查、自动保存、语法高亮以及内置的 CSS 管理器，您可以随心所欲地使用 MarkdownPad。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://tangyun1992.github.io/TangYun.github.io/TangYun.github.io/2017/04/06/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tang Yun">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/TangYun.github.io/uploads/111.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/TangYun.github.io/2017/04/06/hello-world/" itemprop="url">
-                  Hello World
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-06T09:37:54+08:00">
-                2017-04-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+            <p>转载：<a href="https://segmentfault.com/a/1190000000684654" target="_blank" rel="external">https://segmentfault.com/a/1190000000684654</a></p>
 
           
         
@@ -1581,10 +616,6 @@
   </section>
 
   
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/TangYun.github.io/page/2/">2</a><a class="extend next" rel="next" href="/TangYun.github.io/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-
 
 
           </div>
@@ -1627,7 +658,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/TangYun.github.io/archives">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
