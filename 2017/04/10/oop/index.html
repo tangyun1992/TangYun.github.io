@@ -87,14 +87,17 @@
 
 
 
+<meta name="description" content="一.对象与函数的关系在Javascript中,每一个函数实际上都是一个函数对象。可以new一个函数来返回一个对象，所有typeof返回“function”的对象都是函数对象。也称这样的对象为构造器（constructor），因而，所有的构造器都是对象，但不是所有的对象都是构造器。Function是所有函数对象的基础，而Object则是所有对象（包括函数对象）的基础。 二.创建对象工厂模式(无从识别">
 <meta name="keywords">
 <meta property="og:type" content="article">
-<meta property="og:title" content="jdk+tomcat的配置">
-<meta property="og:url" content="https://tangyun1992.github.io/TangYun.github.io/2017/04/06/jdk-tomcat/index.html">
+<meta property="og:title" content="oop">
+<meta property="og:url" content="https://tangyun1992.github.io/TangYun.github.io/2017/04/10/oop/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:updated_time" content="2017-04-06T14:01:31.487Z">
+<meta property="og:description" content="一.对象与函数的关系在Javascript中,每一个函数实际上都是一个函数对象。可以new一个函数来返回一个对象，所有typeof返回“function”的对象都是函数对象。也称这样的对象为构造器（constructor），因而，所有的构造器都是对象，但不是所有的对象都是构造器。Function是所有函数对象的基础，而Object则是所有对象（包括函数对象）的基础。 二.创建对象工厂模式(无从识别">
+<meta property="og:updated_time" content="2017-04-11T03:03:36.108Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="jdk+tomcat的配置">
+<meta name="twitter:title" content="oop">
+<meta name="twitter:description" content="一.对象与函数的关系在Javascript中,每一个函数实际上都是一个函数对象。可以new一个函数来返回一个对象，所有typeof返回“function”的对象都是函数对象。也称这样的对象为构造器（constructor），因而，所有的构造器都是对象，但不是所有的对象都是构造器。Function是所有函数对象的基础，而Object则是所有对象（包括函数对象）的基础。 二.创建对象工厂模式(无从识别">
 
 
 
@@ -122,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="https://tangyun1992.github.io/TangYun.github.io/2017/04/06/jdk-tomcat/"/>
+  <link rel="canonical" href="https://tangyun1992.github.io/TangYun.github.io/2017/04/10/oop/"/>
 
 
 
 
 
-  <title> jdk+tomcat的配置 | Hexo </title>
+  <title> oop | Hexo </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -247,7 +250,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://tangyun1992.github.io/TangYun.github.io/TangYun.github.io/2017/04/06/jdk-tomcat/">
+    <link itemprop="mainEntityOfPage" href="https://tangyun1992.github.io/TangYun.github.io/TangYun.github.io/2017/04/10/oop/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tang Yun">
@@ -268,7 +271,7 @@
             
             
               
-                jdk+tomcat的配置
+                oop
               
             
           </h1>
@@ -283,8 +286,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-06T22:00:56+08:00">
-                2017-04-06
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-10T21:47:22+08:00">
+                2017-04-10
               </time>
             
 
@@ -319,7 +322,21 @@
       
 
       
-        
+        <h1 id="一-对象与函数的关系"><a href="#一-对象与函数的关系" class="headerlink" title="一.对象与函数的关系"></a>一.对象与函数的关系</h1><p>在Javascript中,每一个函数实际上都是一个函数对象。可以new一个函数来返回一个对象，所有typeof返回“function”的对象都是函数对象。也称这样的对象为构造器（constructor），因而，所有的构造器都是对象，但不是所有的对象都是构造器。Function是所有函数对象的基础，而Object则是所有对象（包括函数对象）的基础。</p>
+<h1 id="二-创建对象"><a href="#二-创建对象" class="headerlink" title="二.创建对象"></a>二.创建对象</h1><h2 id="工厂模式-无从识别对象的类型"><a href="#工厂模式-无从识别对象的类型" class="headerlink" title="工厂模式(无从识别对象的类型)"></a>工厂模式(无从识别对象的类型)</h2><p>function createBlog(name, url) {<br>  var o = new Object();<br>  o.name = name;<br>  o.url = url;<br>  o.sayUrl= function() {<br>    alert(this.url);<br>  }<br>  return o;<br>}</p>
+<p>var blog1 = createBlog(‘wuyuchang’, ‘<a href="http://www.jb51.net/" target="_blank" rel="external">http://www.jb51.net/</a>‘);</p>
+<h2 id="构造函数模式-浪费内存的问题"><a href="#构造函数模式-浪费内存的问题" class="headerlink" title="构造函数模式(浪费内存的问题)"></a>构造函数模式(浪费内存的问题)</h2><p>一个普通的函数，内部使用this，对构造函数使用new运算符，this变量会绑定在实例对象上。</p>
+<p><code>function Cat(name,color){</code><br><code>this.name=name;</code><br><code>this.color=color;</code><br><code>}</code><br><code>var cat1=new Cat(&#39;dog&#39;,&#39;black&#39;);</code><br>cat1和cat2会自动含有一个constructor属性，指向它们的构造函数。</p>
+<p>##原型模式<br>每一个构造函数都有一个prototype属性，指向另一个对象。这个对象的所有属性和方法，都会被构造函数的实例继承。</p>
+<p><code>function Cat(){}</code><br><code>Cat.prototype.eat=function(){</code><br><code>alert(&#39;eat&#39;);</code><br><code>}</code></p>
+<h2 id="Prototype模式的验证方法"><a href="#Prototype模式的验证方法" class="headerlink" title="Prototype模式的验证方法"></a>Prototype模式的验证方法</h2><p>为了配合prototype属性，Javascript定义了一些辅助方法，帮助我们使用它。，</p>
+<p>###isPrototypeOf()<br>这个方法用来判断，某个proptotype对象和某个实例之间的关系。<br>　　alert(Cat.prototype.isPrototypeOf(cat1)); //true<br>　　alert(Cat.prototype.isPrototypeOf(cat2)); //true</p>
+<p>###hasOwnProperty()<br>每个实例对象都有一个hasOwnProperty()方法，用来判断某一个属性到底是本地属性，还是继承自prototype对象的属性。<br>　　alert(cat1.hasOwnProperty(“name”)); // true<br>　　alert(cat1.hasOwnProperty(“type”)); // false</p>
+<p>###in运算符<br>in运算符可以用来判断，某个实例是否含有某个属性，不管是不是本地属性。<br>　　alert(“name” in cat1); // true<br>　　alert(“type” in cat1); // true<br>in运算符还可以用来遍历某个对象的所有属性。<br>　　for(var prop in cat1) { alert(“cat1[“+prop+”]=”+cat1[prop]); }</p>
+<h2 id="混合模式（原型模式-构造函数模式）"><a href="#混合模式（原型模式-构造函数模式）" class="headerlink" title="混合模式（原型模式 + 构造函数模式）"></a>混合模式（原型模式 + 构造函数模式）</h2><p>function createBlog(name, url) {<br>  var o = new Object();<br>  o.name = name;<br>  o.url = url;<br>  o.sayUrl= function() {<br>    alert(this.url);<br>  }<br>  return o;<br>}</p>
+<p>var blog1 = createBlog(‘wuyuchang’, ‘<a href="http://www.jb51.net/" target="_blank" rel="external">http://www.jb51.net/</a>‘);</p>
+<p>###new操作符</p>
+
       
     </div>
 
@@ -355,8 +372,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/TangYun.github.io/2017/04/10/js-closure/" rel="next" title="闭包">
-                <i class="fa fa-chevron-left"></i> 闭包
+              <a href="/TangYun.github.io/2017/04/11/data-type/" rel="next" title="data type">
+                <i class="fa fa-chevron-left"></i> data type
               </a>
             
           </div>
@@ -365,8 +382,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/TangYun.github.io/2017/04/06/article-thanks/" rel="prev" title="基于运动想象的脑电信号特征提取">
-                基于运动想象的脑电信号特征提取 <i class="fa fa-chevron-right"></i>
+              <a href="/TangYun.github.io/2017/04/10/js-closure/" rel="prev" title="闭包">
+                闭包 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -414,8 +431,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/TangYun.github.io/uploads/111.jpg"
@@ -459,6 +485,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一-对象与函数的关系"><span class="nav-number">1.</span> <span class="nav-text">一.对象与函数的关系</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二-创建对象"><span class="nav-number">2.</span> <span class="nav-text">二.创建对象</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#工厂模式-无从识别对象的类型"><span class="nav-number">2.1.</span> <span class="nav-text">工厂模式(无从识别对象的类型)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构造函数模式-浪费内存的问题"><span class="nav-number">2.2.</span> <span class="nav-text">构造函数模式(浪费内存的问题)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Prototype模式的验证方法"><span class="nav-number">2.3.</span> <span class="nav-text">Prototype模式的验证方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#混合模式（原型模式-构造函数模式）"><span class="nav-number">2.4.</span> <span class="nav-text">混合模式（原型模式 + 构造函数模式）</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

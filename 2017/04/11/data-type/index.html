@@ -1,0 +1,711 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/TangYun.github.io/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/TangYun.github.io/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/TangYun.github.io/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/TangYun.github.io/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="1. 转换函数：js提供了parseInt()和parseFloat()两个转换函数。前者把值转换成整数，后者把值转换成浮点数。只有对String类型调用这些方法，这两个函数才能正确运行；对其他类型返回的都是NaN(Not a Number)。 在判断字符串是否是数字值前，parseInt()和parseFloat()都会仔细分析该字符串。parseInt()方法首先查看位置0处的 字符，判断它是">
+<meta name="keywords">
+<meta property="og:type" content="article">
+<meta property="og:title" content="data type">
+<meta property="og:url" content="https://tangyun1992.github.io/TangYun.github.io/2017/04/11/data-type/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1. 转换函数：js提供了parseInt()和parseFloat()两个转换函数。前者把值转换成整数，后者把值转换成浮点数。只有对String类型调用这些方法，这两个函数才能正确运行；对其他类型返回的都是NaN(Not a Number)。 在判断字符串是否是数字值前，parseInt()和parseFloat()都会仔细分析该字符串。parseInt()方法首先查看位置0处的 字符，判断它是">
+<meta property="og:updated_time" content="2017-04-11T02:05:28.680Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="data type">
+<meta name="twitter:description" content="1. 转换函数：js提供了parseInt()和parseFloat()两个转换函数。前者把值转换成整数，后者把值转换成浮点数。只有对String类型调用这些方法，这两个函数才能正确运行；对其他类型返回的都是NaN(Not a Number)。 在判断字符串是否是数字值前，parseInt()和parseFloat()都会仔细分析该字符串。parseInt()方法首先查看位置0处的 字符，判断它是">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/TangYun.github.io/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://tangyun1992.github.io/TangYun.github.io/2017/04/11/data-type/"/>
+
+
+
+
+
+  <title> data type | Hexo </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/TangYun.github.io/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/TangYun.github.io/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/TangYun.github.io/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/TangYun.github.io/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://tangyun1992.github.io/TangYun.github.io/TangYun.github.io/2017/04/11/data-type/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tang Yun">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/TangYun.github.io/uploads/111.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                data type
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-11T09:43:53+08:00">
+                2017-04-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="1-转换函数："><a href="#1-转换函数：" class="headerlink" title="1. 转换函数："></a>1. 转换函数：</h2><p>js提供了parseInt()和parseFloat()两个转换函数。前者把值转换成整数，后者把值转换成浮点数。只有对String类型调用这些方法，这两个函数才能正确运行；对其他类型返回的都是NaN(Not a Number)。</p>
+<p>在判断字符串是否是数字值前，parseInt()和parseFloat()都会仔细分析该字符串。parseInt()方法首先查看位置0处的 字符，判断它是否是个有效数字；如果不是，该方法将返回NaN，不再继续执行其他操作。但如果该字符是有效数字，该方法将查看位置1处的字符，进行同样的 测试。这一过程将持续到发现非有效数字的字符为止，此时parseInt()将把该字符之前的字符串转换成数字。</p>
+<p>例如，如果要把字符串 “1234blue “转换成整数，那么parseInt()将返回1234，因为当它检测到字符b时，就会停止检测过程。字符串中包含的数字字面量会被正确转换为数字，因此 字符串 “0xA “会被正确转换为数字10。不过，字符串 “22.5 “将被转换成22，因为对于整数来说，小数点是无效字符。一些示例如下：</p>
+<p>parseInt(“1234blue”);   //returns   1234<br>parseInt(“0xA”);   //returns   10<br>parseInt(“22.5”);   //returns   22<br>parseInt(“blue”);   //returns   NaN</p>
+<p>parseInt()方法还有基模式，可以把二进制、八进制、十六进制或其他任何进制的字符串转换成整数。基是由parseInt()方法的第二个参数指定的，所以要解析十六进制的值，需如下调用parseInt()方法：<br>parseInt(“AF”,   16);   //returns   175<br>当然，对二进制、八进制，甚至十进制（默认模式），都可以这样调用parseInt()方法：<br>parseInt(“10”,   2);   //returns   2<br>parseInt(“10”,   8);   //returns   8<br>parseInt(“10”,   10);   //returns   10<br>如果十进制数包含前导0，那么最好采用基数10，这样才不会意外地得到八进制的值。例如：<br>parseInt(“010”);   //returns   8<br>parseInt(“010”,   8);   //returns   8<br>parseInt(“010”,   10);   //returns   10<br>在这段代码中，两行代码都把字符串 “010 “解析成了一个数字。第一行代码把这个字符串看作八进制的值，解析它的方式与第二行代码（声明基数为8）相同。最后一行代码声明基数为10，所以iNum3最后等于10。</p>
+<p>parseFloat()方法与parseInt()方法的处理方式相似，从位置0开始查看每个字符，直到找到第一个非有效的字符为止，然后把该字 符之前的字符串转换成数字。不过，对于这个方法来说，第一个出现的小数点是有效字符。如果有两个小数点，第二个小数点将被看作无效的， parseFloat()方法会把这个小数点之前的字符串转换成数字。这意味着字符串 “22.34.5 “将被解析成22.34。<br>使用parseFloat()方法的另一不同之处在于，字符串必须以十进制形式表示浮点数，而不能用八进制形式或十六进制形式。该<br>方法会忽略前导0，所以八进制数0908将被解析为908。对于十六进制数0xA，该方法将返回NaN，因为在浮点数中，x不是有效字符。此外，parseFloat()也没有基模式。</p>
+<p>下面是使用parseFloat()方法的示例：<br>parseFloat(“1234blue”);   //returns   1234.0<br>parseFloat(“0xA”);   //returns   NaN<br>parseFloat(“22.5”);   //returns   22.5<br>parseFloat(“22.34.5”);   //returns   22.34<br>parseFloat(“0908”);   //returns   908<br>parseFloat(“blue”);   //returns   NaN</p>
+<h2 id="2-强制类型转换"><a href="#2-强制类型转换" class="headerlink" title="2. 强制类型转换"></a>2. 强制类型转换</h2><p>还可使用强制类型转换（type casting）处理转换值的类型。使用强制类型转换可以访问特定的值，即使它是另一种类型的。<br>ECMAScript中可用的3种强制类型转换如下：<br>Boolean(value)——把给定的值转换成Boolean型；<br>Number(value)——把给定的值转换成数字（可以是整数或浮点数）；<br>String(value)——把给定的值转换成字符串。<br>用这三个函数之一转换值，将创建一个新值，存放由原始值直接转换成的值。这会造成意想不到的后果。<br>当要转换的值是至少有一个字符的字符串、非0数字或对象（下一节将讨论这一点）时，Boolean()函数将返回true。如果该值是空字符串、数字0、undefined或null，它将返回false。</p>
+<p>可以用下面的代码段测试Boolean型的强制类型转换。</p>
+<p>Boolean(“”);   //false   –   empty   string<br>Boolean(“hi”);   //true   –   non-empty   string<br>Boolean(100);   //true   –   non-zero   number<br>Boolean(null);   //false   -   null<br>Boolean(0);   //false   -   zero<br>Boolean(new   Object());   //true   –   object</p>
+<p>Number()的强制类型转换与parseInt()和parseFloat()方法的处理方式相似，只是它转换的是整个值，而不是部分值。还记 得吗，parseInt()和parseFloat()方法只转换第一个无效字符之前的字符串，因此 “4.5.6 “将被转换为 “4.5 “。用Number()进行强制类型转换， “4.5.6 “将返回NaN，因为整个字符串值不能转换成数字。如果字符串值能被完整地转换，Number()将判断是调用parseInt()方法还是调用 parseFloat()方法。下表说明了对不同的值调用Number()方法会发生的情况：</p>
+<p>用法结果<br>Number(false)   0<br>Number(true)   1<br>Number(undefined)   NaN<br>Number(null)   0<br>Number( “5.5 “)   5.5<br>Number( “56 “)   56<br>Number( “5.6.7 “)   NaN<br>Number(new   Object())   NaN<br>Number(100)   100  </p>
+<p>最后一种强制类型转换方法String()是最简单的，因为它可把任何值转换成字符串。要执行这种强制类型转换，只需要调用作为参数传递进来的值的 toString()方法，即把1转换成   “1 “，把true转换成 “true “，把false转换成 “false “，依此类推。强制转换成字符串和调用toString()方法的唯一不同之处在于，对null或undefined值强制类型转换可以生成字符串而不引 发错误：</p>
+<p>var   s1   =   String(null);   //“null”<br>var   oNull   =   null;<br>var   s2   =   oNull.toString();   //won’t   work,   causes   an   error</p>
+<h2 id="3-利用js变量弱类型转换"><a href="#3-利用js变量弱类型转换" class="headerlink" title="3. 利用js变量弱类型转换"></a>3. 利用js变量弱类型转换</h2><p>举个小例子，一看，就会明白了。</p>
+<p><script><br>var   str= ‘012.345 ‘;<br>var   x   =   str-0;<br>x   =   x*1;<br></script></p>
+<h2 id="4-操作数隐式类型转换"><a href="#4-操作数隐式类型转换" class="headerlink" title="4.操作数隐式类型转换"></a>4.操作数隐式类型转换</h2><p>一、减号、乘号、除号、取模…<br>减号、乘号、除号、取模等操作符是比较单纯的操作符。<br>这些操作符会尝试将他们的操作数转换为数字（使用Number()），如果操作数没法转换为数字的话，他们的结果就是NaN。</p>
+<p>NaN与任何数进行这些操作，结果都是NaN<br>    // Demo1.html<br>    var obj = {<br>        valueOf: function() {<br>            return 18;<br>        }<br>    };<br>    var obj2 = {<br>        valueOf: function() {<br>            return 19;<br>        }<br>    };</p>
+<pre><code>console.log(
+        1 - &quot;2&quot;, // -1
+        &quot;32&quot; - &quot;22&quot;, // 10
+        obj % 4, // 2
+        obj * obj2, // 342
+        &quot;99b&quot; * 10 // NaN
+);
+</code></pre><p>二、大于、小于、大于等于、小于等于<br>同（一），但是对于两个操作数均是字符串的时候&amp;无法转换时的返回值会有不同。<br>当两个操作数均是字符串的时候，它会执行大家熟悉的字符串比较，即从左到右依次比较每一个字符的ASCII码，若出现符合操作符的情况，则返回true，否则返回false。<br>无法将操作数转换为数字的情况下总是返回false。</p>
+<p>Boolean(NaN) == false<br>// Demo2.html<br>    var obj = {<br>        valueOf: function() {<br>            return 18;<br>        }<br>    };</p>
+<pre><code>console.log(
+        1 &lt;= &quot;2&quot;, // true
+        &quot;1&quot; &lt;= &quot;a&quot;, // true
+        obj &gt;= &quot;17&quot; // true
+);
+</code></pre><p>三、==、!=<br>这两个运算符在大部分上面都是与（一）相同的，不同的是：</p>
+<p>字符串 op 字符串：不会进行类型转换，直接比较。<br>对象 op 对象：引用都指向同一个对象才为true。<br>    // Demo3.html<br>    var obj = {<br>        valueOf: function() {<br>            return 18;<br>        }<br>    };<br>    var obj2 = {<br>        valueOf: function() {<br>            return 19;<br>        }<br>    };</p>
+<pre><code>console.log(
+        obj == obj2, // false
+        &quot;XD&quot; == &quot;XD&quot;, // true
+        obj == 18, // true
+        obj2 == &quot;19&quot; // true
+);
+</code></pre><p>温馨提示：null == undefined // true<br>四、加号（+）<br>当没有特别指定的时候参考（一），但有如下几种例外情况:</p>
+<p>字符串 + 字符串：进行字符串拼接操作。<br>字符串 + 其他：将其他转换为字符串，并进行拼接操作。<br>    // Demo4.html<br>        var obj = {<br>        toString: function() {<br>            return “18s”;<br>        },<br>        valueOf: undefined<br>    };<br>    var obj2 = {<br>        toString: function() {<br>            return “19b”;<br>        },<br>        valueOf: function() {<br>            return 19;<br>        }<br>    };</p>
+<pre><code>console.log(
+        obj + obj2, // &quot;18s19&quot;
+        obj2 + obj2 // 38
+);
+</code></pre><p>注意上面obj + obj2的结果不是”18s19b”<br>console.log(1+”2”+”2”)  // “1” + “2” + “2” ==&gt; “122”<br>console.log(1+ +”2” + “2”) // +”2” === 2; 1 + 2 + “2” ==&gt; 3 + “2” ==&gt; “3” + “2” ==&gt; “32”<br>console.log(“A” - “B” + “2”)  // “A” - “B”为NaN ==&gt; “NaN” + “2” ==&gt; “NaN2”<br>console.log(“A” - “B” + “2”)  // “A” - “B”为NaN, NaN加任何number都还是NaN</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/TangYun.github.io/2017/04/11/reference-type/" rel="next" title="reference type">
+                <i class="fa fa-chevron-left"></i> reference type
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/TangYun.github.io/2017/04/10/oop/" rel="prev" title="oop">
+                oop <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/TangYun.github.io/uploads/111.jpg"
+               alt="Tang Yun" />
+          <p class="site-author-name" itemprop="name">Tang Yun</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/TangYun.github.io/archives">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-转换函数："><span class="nav-number">1.</span> <span class="nav-text">1. 转换函数：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-强制类型转换"><span class="nav-number">2.</span> <span class="nav-text">2. 强制类型转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-利用js变量弱类型转换"><span class="nav-number">3.</span> <span class="nav-text">3. 利用js变量弱类型转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-操作数隐式类型转换"><span class="nav-number">4.</span> <span class="nav-text">4.操作数隐式类型转换</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tang Yun</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/TangYun.github.io/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/TangYun.github.io/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/TangYun.github.io/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/TangYun.github.io/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/TangYun.github.io/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/TangYun.github.io/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/TangYun.github.io/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/TangYun.github.io/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/TangYun.github.io/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/TangYun.github.io/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/TangYun.github.io/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/TangYun.github.io/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/TangYun.github.io/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
